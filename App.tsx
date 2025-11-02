@@ -23,12 +23,12 @@ const App: React.FC = () => {
       window.removeEventListener('hashchange', handleHashChange);
     };
   }, []);
-  
+
   const allBlogs = [...profileData.blogs]
           .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  
+
   const recentBlogs = allBlogs.slice(0, 3);
-  
+
   const parsedAbout = { __html: marked.parse(profileData.about) };
 
   const renderContent = () => {
@@ -67,12 +67,12 @@ const App: React.FC = () => {
         return (
           <>
             <Section id="about" title="About Me">
-              <div 
+              <div
                 className="leading-relaxed markdown-content"
                 dangerouslySetInnerHTML={parsedAbout}
               />
             </Section>
-            
+
             <Section id="education" title="Education" Icon={BookOpen}>
               <div className="space-y-6">
                 {profileData.education.map((edu, index) => (
@@ -81,9 +81,9 @@ const App: React.FC = () => {
               </div>
             </Section>
 
-            <Section 
-              id="recents" 
-              title="Recents" 
+            <Section
+              id="recents"
+              title="Recents"
               Icon={NewspaperIcon}
               actionLink={{ href: '#blogs', text: 'View All Blogs' }}
             >
@@ -110,7 +110,7 @@ const App: React.FC = () => {
             currentPage={activePage}
           />
         </header>
-        
+
         <main className="mt-12 lg:mt-0 lg:w-2/3 lg:py-12">
           <div className="animate-fade-in">
             {renderContent()}
@@ -122,11 +122,11 @@ const App: React.FC = () => {
               </Section>
             </div>
           </div>
-          <footer className="mt-16 text-center text-sm text-secondary dark:text-dark-secondary">
-            <p>Designed & Built by {profileData.name}.</p>
-            <p>Built with React, TypeScript, and Tailwind CSS.</p>
-          </footer>
         </main>
+        <footer className="mt-16 text-center text-sm text-secondary dark:text-dark-secondary">
+          <p>Designed & Built by {profileData.name}.</p>
+          <p>Built with React, TypeScript, and Tailwind CSS.</p>
+        </footer>
       </div>
     </div>
   );

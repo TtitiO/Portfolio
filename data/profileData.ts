@@ -1,8 +1,8 @@
 import { ProfileData } from '../types';
 
 export const profileData: ProfileData = {
-  name: 'Alex Doe',
-  title: 'PhD Candidate in Computational Linguistics',
+  name: 'Ting Lin',
+  title: 'PhD Student in Computer Engineering',
   bio: 'I build **intelligent systems** that understand and generate *human language*.',
   about: `Driven by a passion for the intersection of language, data, and computation, I am currently pursuing my PhD at the **University of Tech**. My research focuses on developing more efficient and interpretable NLP models.
 
@@ -11,24 +11,24 @@ When I'm not in the lab, I enjoy:
 - Photography
 - Exploring the latest advancements in open-source technology.`,
   contact: {
-    email: 'alex.doe@email.com',
-    github: 'https://github.com/alexdoe',
-    linkedin: 'https://linkedin.com/in/alexdoe',
-    twitter: 'https://twitter.com/alexdoe',
+    email: 'ting_lin@sjtu.edu.cn',
+    github: 'https://github.com/TtitiO',
+    linkedin: 'https://linkedin.com/in/tinglin',
+    twitter: 'https://twitter.com/tinglin',
   },
   education: [
     {
-      degree: 'Ph.D. in Computer Science',
-      institution: 'University of Technology',
-      period: '2020 - Present',
+      degree: 'Ph.D. in Computer Engineering',
+      institution: 'Shanghai Jiao Tong University',
+      period: '2025 - Present',
       description: `Focusing on Natural Language Processing and Deep Learning models for semantic understanding.
 - Researching **interpretability methods** for large-scale language models.
 - Teaching assistant for *Introduction to AI*.`,
     },
     {
-      degree: 'B.S. in Software Engineering',
-      institution: 'City College',
-      period: '2014 - 2018',
+      degree: 'B.S. in Electrical and Computer Engineering',
+      institution: 'Shanghai Jiao Tong University',
+      period: '2021 - 2025',
       description: 'Completed a senior project on building a real-time collaborative code editor.',
     },
   ],
