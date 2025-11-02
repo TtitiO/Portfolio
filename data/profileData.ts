@@ -26,12 +26,6 @@ When I'm not in the lab, I enjoy:
 - Teaching assistant for *Introduction to AI*.`,
     },
     {
-      degree: 'M.S. in Computer Science',
-      institution: 'State University',
-      period: '2018 - 2020',
-      description: 'Thesis on *"Transfer Learning for Low-Resource Language Translation"*. Graduated with honors.',
-    },
-    {
       degree: 'B.S. in Software Engineering',
       institution: 'City College',
       period: '2014 - 2018',
