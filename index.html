@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academic Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              // Catppuccin Latte (Light)
+              'primary': '#4c4f69', 
+              'secondary': '#6c6f85',
+              'accent': '#179299',
+              'background': '#eff1f5',
+              'surface': '#e6e9ef',
+              'overlay': '#ccd0da',
+              'heading': '#5c5f77',
+              'border': '#dce0e8',
+              'mauve': '#8839ef',
+              'blue': '#1e66f5',
+              'green': '#40a02b',
+
+              // Catppuccin Mocha (Dark)
+              'dark-primary': '#cdd6f4',
+              'dark-secondary': '#a6adc8',
+              'dark-accent': '#94e2d5',
+              'dark-background': '#1e1e2e',
+              'dark-surface': '#181825',
+              'dark-overlay': '#313244',
+              'dark-heading': '#bac2de',
+              'dark-border': '#11111b',
+              'dark-mauve': '#cba6f7',
+              'dark-blue': '#89b4fa',
+              'dark-green': '#a6e3a1'
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.2s ease-out forwards;
+      }
+      .markdown-content p {
+        margin-bottom: 0.75em;
+      }
+      .markdown-content p:last-child {
+        margin-bottom: 0;
+      }
+      .markdown-content h3 {
+        font-size: 1.1em;
+        font-weight: 600;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+        color: var(--tw-prose-headings);
+      }
+      .dark .markdown-content h3 {
+        color: var(--tw-prose-invert-headings);
+      }
+      .markdown-content ul {
+          list-style-type: disc;
+          padding-left: 1.5em;
+          margin-top: 0.5em;
+      }
+      .markdown-content li {
+          margin-bottom: 0.25em;
+      }
+      .markdown-content a {
+          color: #1e66f5; /* blue */
+          text-decoration: underline;
+          font-weight: 500;
+      }
+      .dark .markdown-content a {
+          color: #89b4fa; /* dark-blue */
+      }
+      .markdown-content strong {
+        font-weight: 600;
+        color: var(--tw-prose-bold);
+      }
+      .dark .markdown-content strong {
+        color: var(--tw-prose-invert-bold);
+      }
+      .markdown-content em {
+        font-style: italic;
+      }
+      .markdown-content pre {
+        background-color: theme('colors.surface');
+        padding: 1em;
+        border-radius: 8px;
+        overflow-x: auto;
+        margin: 1em 0;
+      }
+      .dark .markdown-content pre {
+        background-color: theme('colors.dark.surface');
+      }
+      .markdown-content code {
+        background-color: theme('colors.surface');
+        padding: 0.1em 0.3em;
+        border-radius: 4px;
+        font-family: monospace;
+        font-size: 0.9em;
+      }
+      .dark .markdown-content code {
+        background-color: theme('colors.dark.surface');
+      }
+      .markdown-content pre code {
+        background-color: transparent;
+        padding: 0;
+        border-radius: 0;
+      }
+    </style>
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-background text-primary dark:bg-dark-background dark:text-dark-primary [--tw-prose-headings:theme(colors.heading)] [--tw-prose-bold:theme(colors.primary)] dark:[--tw-prose-invert-headings:theme(colors.dark.heading)] dark:[--tw-prose-invert-bold:theme(colors.dark.primary)]">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "name": "Portfolio",
+  "description": "A modern and customizable personal academic profile website to showcase education, projects, publications, and experiments. Built with React and Tailwind CSS.",
+  "requestFramePermissions": []
+}
