@@ -121,12 +121,13 @@ const App: React.FC = () => {
                 <Gallery images={profileData.gallery} />
               </Section>
             </div>
+            <footer className="mt-16 text-center text-sm text-secondary dark:text-dark-secondary">
+              <p>Designed & Built by {profileData.name}.</p>
+              <p>Built with React, TypeScript, and Tailwind CSS.</p>
+            </footer>
           </div>
         </main>
-        <footer className="mt-16 text-center text-sm text-secondary dark:text-dark-secondary">
-          <p>Designed & Built by {profileData.name}.</p>
-          <p>Built with React, TypeScript, and Tailwind CSS.</p>
-        </footer>
+
       </div>
     </div>
   );
