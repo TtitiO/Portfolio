@@ -3,7 +3,7 @@ import { profileData } from './data/profileData';
 import Sidebar from './components/Sidebar';
 import Section from './components/Section';
 import { EducationCard, PublicationCard, ExperienceCard, BlogCard } from './components/Cards';
-import { BookOpen, Briefcase, DocumentDuplicateIcon, NewspaperIcon } from './components/Icons';
+import { BookOpen, Briefcase, DocumentDuplicateIcon, NewspaperIcon, ViewGridIcon, ViewListIcon } from './components/Icons';
 import Gallery from './components/Gallery';
 
 declare const marked: any;
@@ -11,6 +11,7 @@ declare const marked: any;
 const App: React.FC = () => {
   const getActivePage = () => window.location.hash.substring(1) || 'about';
   const [activePage, setActivePage] = useState(getActivePage());
+  const [blogView, setBlogView] = useState<'list' | 'grid'>('list');
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -30,6 +31,21 @@ const App: React.FC = () => {
   const recentBlogs = allBlogs.slice(0, 3);
 
   const parsedAbout = { __html: marked.parse(profileData.about) };
+
+  const handleToggleBlogView = () => {
+    setBlogView(prevView => prevView === 'list' ? 'grid' : 'list');
+  };
+
+  const renderViewToggle = (
+    <button
+        onClick={handleToggleBlogView}
+        aria-label={`Switch to ${blogView === 'list' ? 'Grid' : 'List'} View`}
+        title={`Switch to ${blogView === 'list' ? 'Grid' : 'List'} View`}
+        className="p-1.5 rounded-md transition text-secondary dark:text-dark-secondary hover:bg-overlay/70 dark:hover:bg-dark-overlay/50 hover:text-mauve dark:hover:text-dark-mauve"
+    >
+        {blogView === 'list' ? <ViewGridIcon className="h-5 w-5" /> : <ViewListIcon className="h-5 w-5" />}
+    </button>
+  );
 
   const renderContent = () => {
     switch (activePage) {
@@ -55,10 +71,18 @@ const App: React.FC = () => {
         );
       case 'blogs':
         return (
-          <Section id="blogs" title="All Blogs" Icon={NewspaperIcon}>
-            <div className="space-y-8">
+          <Section
+            id="blogs"
+            title="All Blogs"
+            Icon={NewspaperIcon}
+            actionControls={renderViewToggle}
+          >
+            <div className={blogView === 'list'
+                ? "space-y-8"
+                : "grid grid-cols-1 md:grid-cols-2 gap-6"
+            }>
               {allBlogs.map((blog, index) => (
-                <BlogCard key={index} blog={blog} />
+                <BlogCard key={index} blog={blog} view={blogView} />
               ))}
             </div>
           </Section>
@@ -86,10 +110,14 @@ const App: React.FC = () => {
               title="Recents"
               Icon={NewspaperIcon}
               actionLink={{ href: '#blogs', text: 'View All Blogs' }}
+              actionControls={renderViewToggle}
             >
-              <div className="space-y-8">
+              <div className={blogView === 'list'
+                ? "space-y-8"
+                : "grid grid-cols-1 md:grid-cols-2 gap-6"
+              }>
                 {recentBlogs.map((blog, index) => (
-                  <BlogCard key={index} blog={blog} />
+                  <BlogCard key={index} blog={blog} view={blogView} />
                 ))}
               </div>
             </Section>
@@ -121,13 +149,12 @@ const App: React.FC = () => {
                 <Gallery images={profileData.gallery} />
               </Section>
             </div>
-            <footer className="mt-16 text-center text-sm text-secondary dark:text-dark-secondary">
-              <p>Designed & Built by {profileData.name}.</p>
-              <p>Built with React, TypeScript, and Tailwind CSS.</p>
-            </footer>
           </div>
+          <footer className="mt-16 text-center text-sm text-secondary dark:text-dark-secondary">
+            <p>Designed & Built by {profileData.name}.</p>
+            <p>Built with React, TypeScript, and Tailwind CSS.</p>
+          </footer>
         </main>
-
       </div>
     </div>
   );

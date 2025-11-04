@@ -3,11 +3,11 @@ import { ProfileData } from '../types';
 export const profileData: ProfileData = {
   name: 'Ting Lin',
   title: 'PhD Student in Computer Engineering',
-  bio: 'I build **intelligent systems** that understand and generate *human language*.',
-  about: `Driven by a passion for the intersection of language, data, and computation, I am currently pursuing my PhD at the **University of Tech**. My research focuses on developing more efficient and interpretable NLP models.
+  bio: 'I focus on **hardware abstraction and compiler support** for efficient ML/AI models on edge devices.',
+  about: `Driven by a passion for computer architecture and systems design, I am currently pursuing my PhD at the **Shanghai Jiao Tong University**. My research focuses on developing hardware abstraction layers and compiler optimizations to enable efficient execution of machine learning models.
 
 When I'm not in the lab, I enjoy:
-- Hiking
+- Movies
 - Photography
 - Exploring the latest advancements in open-source technology.`,
   contact: {
