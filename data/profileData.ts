@@ -8,13 +8,12 @@ export const profileData: ProfileData = {
 
 When I'm not in the lab, I enjoy:
 - Movies
-- Photography
-- Exploring the latest advancements in open-source technology.`,
+- Film cameras
+- Kittens.`,
   contact: {
     email: 'ting_lin@sjtu.edu.cn',
     github: 'https://github.com/TtitiO',
     linkedin: 'https://linkedin.com/in/tinglin',
-    twitter: 'https://twitter.com/tinglin',
   },
   education: [
     {
@@ -52,21 +51,12 @@ When I'm not in the lab, I enjoy:
   ],
   experiences: [
     {
-      role: 'Research Intern',
-      company: 'Innovate AI Corp',
-      period: 'Summer 2022',
-      description: `- Developed and implemented a novel algorithm for sentiment analysis on short-text data, improving accuracy by **15%** over the existing baseline.
-- Contributed to a team project on *multimodal emotion recognition*.`,
-      link: '#',
-      tags: ['Python', 'PyTorch', 'NLP', 'Scikit-learn'],
-    },
-    {
-      role: 'Software Engineer Intern',
-      company: 'Data Solutions Inc.',
-      period: 'Summer 2019',
-      description: 'Designed and built a data processing pipeline using Apache Spark to handle over 1TB of data daily. Created dashboards and visualizations in Tableau to present key metrics to stakeholders.',
-      link: '#',
-      tags: ['Python', 'Apache Spark', 'SQL', 'Tableau'],
+      role: 'Teaching Assistant',
+      company: 'Shanghai Jiao Tong University',
+      period: 'Fall 2025',
+      description: `- Assisted in teaching **System-on-Chip (SoC) Design**.
+- Held weekly lab sessions and office hours to support students.`,
+      tags: ['Teaching', 'SoC', 'Hardware Design'],
     },
   ],
   blogs: [
